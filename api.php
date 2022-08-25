@@ -174,48 +174,6 @@ wp_mail( $maile, 'Accueil - Academie Anais Abaakil', $message );
 }
 
 } else {
-
-/*
-$resconf = $wpdb->get_var("SELECT formare_conf FROM $table_name WHERE client_id='$idclient' AND formare_id='$formid'");
-$conf = $resconf;
-
-if (($conf==0) && ($activ==1)) {
-
-$ids = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_title = '".$namepr."'");
-$link = get_permalink($ids);
-$elink = $link;
-
-$exists = email_exists($maile);
-
-if (!$exists && ($activ==1)) {
-
-$passw=wp_generate_password( 6, true );
-wp_insert_user( array(
-  'user_login' => $maile,
-  'user_pass' => $passw,
-  'user_email' => $maile,
-  'first_name' => $namest,
-  'display_name' => $namest,
-  'role' => 'customer'
-));   
-
-$message = "Acum puteti cumpara cursul: ".$namepr."\r\n";
-$message .= "Link: ". $elink ."\r\n";
-$message .= "Login: ".$maile."\r\n";
-$message .= "Pass: ".$passw;
-wp_mail( $maile, 'Accueil - Academie Anais Abaakil', $message );
- 
-} else if ($exists && ($activ==1)) {
-
-$message = "Acum puteti cumpara cursul: ".$namepr."\r\n";
-$message .= "Link: ". $elink ;
-wp_mail( $maile, 'Accueil - Academie Anais Abaakil', $message );
-
-  }
-}
-
-$wpdb->query( $wpdb->prepare( "UPDATE $table_name SET formare_conf = %d WHERE client_id = %d AND formare_id=%d", 0, $maile, $formid) );*/
-
                  $wpdb->query( $wpdb->prepare( "UPDATE $table_name SET formare_conf = %d, client_email = %s WHERE client_id = %d AND formare_id=%d", $activ, $maile, $idclient, $formid) );
             
       
