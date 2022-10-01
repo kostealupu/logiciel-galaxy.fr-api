@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-require_once("/var/www/kostealupu/data/www/test.smartmozg.com/wp-load.php");
+require_once("............./wp-load.php");
 global $wpdb;
 $table_name = $wpdb->prefix.'cursvalid';
 
